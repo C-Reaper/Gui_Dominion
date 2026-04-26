@@ -1,193 +1,92 @@
-# Gui_Dominion
+# Project README
 
+## Overview
+This project is a simple implementation of the classic card game "Dominion" using a graphical user interface. It supports basic gameplay features and runs on multiple platforms, including Linux, Windows, and WebAssembly.
 
-## Project Overview
+## Features
+- Basic Dominion game mechanics (e.g., phases, player turns, cards)
+- Interaction via mouse clicks and keyboard inputs
+- Rendering of the game state
+- Support for different build environments
 
-This project implements specialized functionality related to dominion.
-
-## Core Components
-
-### Main Functionality
-- Implements core algorithms for dominion
-- Efficient data structures
-- Optimized performance
-- Clean code organization
-
-### Technical Features
-- C/C++ implementation
-- Dynamic memory management
-- Platform-independent design
-- Real-time capable
-
-### Architecture
-- Module separation
-- Clear interface design
-- Proper abstraction layers
-- Extensible design
-
-## Use Cases
-- Production systems
-- Educational purposes
-- Research applications
-- Performance-critical operations
-
-## Performance Characteristics
-- Optimized algorithms
-- Efficient memory usage
-- Scalable architecture
-- Minimal overhead
-
-## Implementation Quality
-- Well-organized code
-- Meaningful naming
-- Proper error handling
-- Memory management
-
-## Build and Deployment
-- Standard C/C++ compilation
-- Makefile-based building
-- Cross-platform support
-- Easy integration
-
-
-## Building the Project
-
+## Project Structure
 ### Prerequisites
-- C/C++ Compiler (GCC, Clang, or MSVC)
+- C/C++ Compiler and Debugger (GCC, Clang)
 - Make utility
 - Standard development tools
+- Libraries needed in specific projects:
+  - Linux: X11, PNG, JPEG
+  - Windows: WINAPI, User32, GDI32, Winmm
+  - WebAssembly: Emscripten
 
-### Build Steps
+## Build & Run
+### Build Process
+To build the project on a specific platform, navigate to the project directory and use the appropriate Makefile. The following commands are used for different platforms:
 
-1. Navigate to project directory:
-```bash
-cd Gui_Dominion
+#### Linux:
+```sh
+make -f Makefile.linux all
 ```
 
-2. Build the project:
-```bash
-make -f Makefile.(os) all
+#### Windows (MinGW-w64):
+```sh
+make -f Makefile.windows all
 ```
 
-3. For clean rebuild:
-```bash
-make -f Makefile.(os) clean
-make -f Makefile.(os) all
+#### Wine Build (Linux cross compile for Windows):
+```sh
+make -f Makefile.wine all
 ```
 
-4. If there are ./bin and ./libs directories, build libs with:
-```bash
-make -f Makefile.(os) cleanlib
-make -f Makefile.(os) lib
+#### WebAssembly (Emscripten):
+```sh
+make -f Makefile.web all
 ```
 
-### Build Options
-```bash
-make -f Makefile.(os) all         # build output
-make -f Makefile.(os) do        # build + exe output
-make -f Makefile.(os) clean   # Remove build artifacts
-```
+### Clean and Rebuild
+To clean the build artifacts and rebuild, use:
 
-## Running the Project
+- Linux:
+  ```sh
+  make -f Makefile.linux clean
+  make -f Makefile.linux all
+  ```
 
-Execute the compiled binary:
+- Windows (MinGW-w64):
+  ```sh
+  make -f Makefile.windows clean
+  make -f Makefile.windows all
+  ```
 
-```bash
-./build/Main(.exe)
-```
+- Wine Build (Linux cross compile for Windows):
+  ```sh
+  make -f Makefile.wine clean
+  make -f Makefile.wine all
+  ```
 
-Or using make:
-```bash
-make -f Makefile.(os) exe
-```
+- WebAssembly (Emscripten):
+  ```sh
+  make -f Makefile.web clean
+  make -f Makefile.web all
+  ```
 
-## Project Organization
+### Execute the Program
+To execute the built program:
 
-```
-Gui_Dominion/
-├── src/
-│   ├── Main.c          # Entry point
-│   └── *.c             # Implementation files
-├── Makefile            # Build configuration
-└── README.md           # This file
-```
+- Linux:
+  ```sh
+  make -f Makefile.linux exe
+  ```
 
-## Technical Details
+- Windows (MinGW-w64):
+  ```sh
+  make -f Makefile.windows exe
+  ```
 
-### Language: C/C++
-- Performance-oriented
-- Direct hardware access where needed
-- Memory efficient
-- Widely portable
+- Wine Build (Linux cross compile for Windows):
+  ```sh
+  make -f Makefile.wine exe
+  ```
 
-### Key Technologies
-- Standard C library
-- System-specific libraries as needed
-- Algorithm optimization
-- Efficient data structures
-
-### Code Quality
-- Clean, readable implementation
-- Proper error handling
-- Resource management
-- Well-documented algorithms
-
-## Development Notes
-
-### Architecture Decisions
-- Modular design for reusability
-- Efficient algorithms for performance
-- Clear separation of concerns
-- Extensible structure
-
-### Performance Optimizations
-- Algorithm efficiency
-- Memory layout optimization
-- Cache-conscious programming
-- Minimal overhead
-
-### Portability
-- Cross-platform compatible
-- Platform-specific optimizations where possible
-- Standard library usage
-- No external dependencies (where feasible)
-
-## Troubleshooting
-
-### Build Issues
-- Ensure compiler is installed
-- Check file paths and permissions
-- Verify Make installation
-- Review compiler error messages
-
-### Runtime Issues
-- Check input data validity
-- Verify file accessibility
-- Ensure sufficient memory
-- Review output format
-
-### Performance Issues
-- Check compiler optimization flags
-- Profile hot code paths
-- Review algorithm complexity
-- Consider input size
-
-## Future Improvements
-
-Potential enhancements:
-- Additional optimization opportunities
-- Extended functionality
-- Platform-specific optimizations
-- Performance profiling
-
-## References
-
-For technical background:
-- Algorithm textbooks
-- Computer science references
-- Language documentation
-- Online educational resources
-
----
-
-*Project implementing practical algorithms and data structures in C/C++*
+- WebAssembly (Emscripten):
+  Open the `index.html` file in a web browser.
